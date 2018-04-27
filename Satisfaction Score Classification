@@ -61,7 +61,7 @@ get_numeric_data = FunctionTransformer(lambda x: x[numerical_data], validate=Fal
 just_text_data = get_text_data.fit_transform(training1)
 just_numeric_data = get_numeric_data.fit_transform(training1)
 
-# Create labels:
+# Assign labels:
 
 y = training1.score
 
@@ -84,7 +84,7 @@ X_train, X_test, y_train, y_test = train_test_split( training1[['sex_1.0', 'sex_
 
 process_and_join_features = FeatureUnion(transformer_list = [('numeric_features', Pipeline([('selector', get_numeric_data)])), 
                                                              ('text_features', Pipeline([('selector', get_text_data),
-                                                                                         ('vectorizer', TfidfVectorizer(stop_words='english', ngram_range=(1,2)))]))
+                                                                                         ('vectorizer', TfidfVectorizer( *maybe token pattern also* stop_words='english', ngram_range=(1,2)))]))
                                                             ])
                                                             
 # Fitting the training data to classification model:
