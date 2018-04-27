@@ -98,7 +98,7 @@ pred = pl.predict(X_test)
 score = sum((pred-y_test)**2)
 print(score)
 
-# Checking best alpha for MultinomailNB classification model
+# Searching the best alpha for MultinomailNB classification model
 
 alphas = np.arange(0, 1, .1)
 
